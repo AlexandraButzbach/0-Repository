@@ -2,7 +2,9 @@
 import db from "../config/database.js";
  
 // Get All Products
+
 export const getProducts = (result) => {
+//@Work hier FROM "product" ersetzen
     db.query("SELECT * FROM product", (err, results) => {             
         if(err) {
             console.log(err);

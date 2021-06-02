@@ -6,15 +6,21 @@
     <table class="table is-striped is-bordered mt-2 is-fullwidth">
       <thead>
         <tr>
-          <th>Product Name</th>
-          <th>Price</th>
+          <th>Datum</th>
+          <th>Start</th>
+          <th>Ende</th>
+          <th>Dauer</th>
+          <th>Intensität</th>
           <th class="has-text-centered">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in items" :key="item.product_id">
-          <td>{{ item.product_name }}</td>
-          <td>{{ item.product_price }}</td>
+          <td>{{ item.migraine_datum }}</td>
+          <td>{{ item.migraine_start }}</td>
+          <td>{{ item.migraine_ende }}</td>
+          <td>{{ item.migraine_dauer }}</td>
+          <td>{{ item.migraine_intensitaet }}</td>
           <td class="has-text-centered">
             <router-link
               :to="{ name: 'Edit', params: { id: item.product_id } }"
