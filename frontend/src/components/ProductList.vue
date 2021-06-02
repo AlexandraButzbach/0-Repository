@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.product_id">
+        <tr v-for="item in items" :key="item.migraine_id">
           <td>{{ item.migraine_datum }}</td>
           <td>{{ item.migraine_start }}</td>
           <td>{{ item.migraine_ende }}</td>
@@ -23,13 +23,13 @@
           <td>{{ item.migraine_intensitaet }}</td>
           <td class="has-text-centered">
             <router-link
-              :to="{ name: 'Edit', params: { id: item.product_id } }"
+              :to="{ name: 'Edit', params: { id: item.migraine_id } }"
               class="button is-info is-small"
               >Edit</router-link
             >
             <a
               class="button is-danger is-small"
-              @click="deleteProduct(item.product_id)"
+              @click="deletemigraine(item.migraine_id)"
               >Delete</a
             >
           </td>
@@ -44,7 +44,7 @@
 import axios from "axios";
  
 export default {
-  name: "ProductList",
+  name: "MigraineList",
   data() {
     return {
       items: [],
@@ -52,25 +52,25 @@ export default {
   },
  
   created() {
-    this.getProducts();
+    this.getMigraines();
   },
  
   methods: {
-    // Get All Products
-    async getProducts() {
+    // Get All Migraines
+    async getMigraines() {
       try {
-        const response = await axios.get("http://localhost:5000/products");
+        const response = await axios.get("http://localhost:5000/Migraines");
         this.items = response.data;
       } catch (err) {
         console.log(err);
       }
     },
  
-    // Delete Product
-    async deleteProduct(id) {
+    // Delete Migraine
+    async deleteMigraine(id) {
       try {
-        await axios.delete(`http://localhost:5000/products/${id}`);
-        this.getProducts();
+        await axios.delete(`http://localhost:5000/Migraines/${id}`);
+        this.getMigraines();
       } catch (err) {
         console.log(err);
       }

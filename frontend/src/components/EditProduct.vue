@@ -61,7 +61,7 @@
     </div>
 
     <div class="control">
-      <button class="button is-success" @click="updateProduct">UPDATE</button>
+      <button class="button is-success" @click="updateMigraine">UPDATE</button>
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@
 import axios from "axios";
  
 export default {
-  name: "EditProduct",
+  name: "EditMigraine",
   data() {
     return {
       migraineDatum: "",
@@ -82,14 +82,14 @@ export default {
     };
   },
   created: function () {
-    this.getProductById();
+    this.getMigraineById();
   },
   methods: {
-    // Get Product By Id
-    async getProductById() {
+    // Get Migraine By Id
+    async getMigraineById() {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products/${this.$route.params.id}`
+          `http://localhost:5000/Migraines/${this.$route.params.id}`
         );
         this.migraineDatum = response.data.migraine_datum;
         this.migraineStart = response.data.migraine_start;
@@ -101,14 +101,14 @@ export default {
       }
     },
  
-    // Update product
-    async updateProduct() {
+    // Update Migraine
+    async updateMigraine() {
       try {
         await axios.put(
-          `http://localhost:5000/products/${this.$route.params.id}`,
+          `http://localhost:5000/Migraines/${this.$route.params.id}`,
           {
-            product_name: this.productName,
-            product_price: this.productPrice,
+            Migraine_name: this.MigraineName,
+            Migraine_price: this.MigrainePrice,
           }
         );
         this.migraineDatum = "";
