@@ -4,8 +4,10 @@ import mysql from "mysql2";
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'password',
-  database: 'pos_db'
+//@WorkEigenes Passwort
+  password: '1001Elfi',
+//@Work hier anpassen
+  database: 'migraine_db'
 });
 
 db.connect((err) => {

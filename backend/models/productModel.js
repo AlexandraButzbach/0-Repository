@@ -1,11 +1,11 @@
 // import connection
 import db from "../config/database.js";
  
-// Get All Products
+// Get All Migraines
 
-export const getProducts = (result) => {
-//@Work hier FROM "product" ersetzen
-    db.query("SELECT * FROM product", (err, results) => {             
+export const getMigraines = (result) => {
+//@Work hier FROM "migraine" ersetzen
+    db.query("SELECT * FROM migraine", (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -15,9 +15,9 @@ export const getProducts = (result) => {
     });   
 }
  
-// Get Single Product
-export const getProductById = (id, result) => {
-    db.query("SELECT * FROM product WHERE product_id = ?", [id], (err, results) => {             
+// Get Single Migraine
+export const getMigraineById = (id, result) => {
+    db.query("SELECT * FROM migraine WHERE migraine_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -27,9 +27,9 @@ export const getProductById = (id, result) => {
     });   
 }
  
-// Insert Product to Database
-export const insertProduct = (data, result) => {
-    db.query("INSERT INTO product SET ?", [data], (err, results) => {             
+// Insert Migraine to Database
+export const insertMigraine = (data, result) => {
+    db.query("INSERT INTO migraine SET ?", [data], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -39,9 +39,11 @@ export const insertProduct = (data, result) => {
     });   
 }
  
-// Update Product to Database
-export const updateProductById = (data, id, result) => {
-    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+// Update Migraine to Database
+export const updateMigraineById = (data, id, result) => {
+    
+    db.query("UPDATE migraine SET migraine_datum = ?, migraine_start = ?, 	migraine_ende = ?, 	migraine_dauer = ?, 	migraine_intensitaet = ? WHERE migraine_id = ?", 
+    [data.migraine_datum, migraine_start, migraine_ende, migraine_dauer, migraine_intensitaet, id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -51,9 +53,9 @@ export const updateProductById = (data, id, result) => {
     });   
 }
  
-// Delete Product to Database
-export const deleteProductById = (id, result) => {
-    db.query("DELETE FROM product WHERE product_id = ?", [id], (err, results) => {             
+// Delete Migraine to Database
+export const deleteMigraineById = (id, result) => {
+    db.query("DELETE FROM migraine WHERE migraine_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);

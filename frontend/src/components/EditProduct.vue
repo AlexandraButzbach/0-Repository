@@ -89,7 +89,7 @@ export default {
     async getMigraineById() {
       try {
         const response = await axios.get(
-          `http://localhost:5000/Migraines/${this.$route.params.id}`
+          `http://localhost:5000/migraines/${this.$route.params.id}`
         );
         this.migraineDatum = response.data.migraine_datum;
         this.migraineStart = response.data.migraine_start;
@@ -105,7 +105,7 @@ export default {
     async updateMigraine() {
       try {
         await axios.put(
-          `http://localhost:5000/Migraines/${this.$route.params.id}`,
+          `http://localhost:5000/migraines/${this.$route.params.id}`,
           {
             Migraine_name: this.MigraineName,
             Migraine_price: this.MigrainePrice,

@@ -61,7 +61,7 @@
     </div>
  
     <div class="control">
-      <button class="button is-success" @click="saveProduct">SAVE</button>
+      <button class="button is-success" @click="saveMigraine">SAVE</button>
     </div>
   </div>
 </template>
@@ -73,7 +73,7 @@ import axios from "axios";
 
 
 export default {
-  name: "AddProduct",
+  name: "AddMigraine",
   data() {
     return {
       migraineDatum: "",
@@ -86,12 +86,11 @@ export default {
     };
   },
   methods: {
-    // Create New product
-    async saveProduct() {
+    // Create New Migraine
+    async saveMigraine() {
       try {
-        await axios.post("http://localhost:5000/products", {
+        await axios.post("http://localhost:5000/migraines", {
         //@Work hier noch unsere zusätzlichen Felder hinzufügen, mit der GENAU gleichen Schreibweise wie im DataGrip
-
           migraine_datum: this.migraineDatum,
           migraine_start: this.migraineStart,
           migraine_ende: this.migraineEnde,

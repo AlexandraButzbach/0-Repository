@@ -59,7 +59,7 @@ export default {
     // Get All Migraines
     async getMigraines() {
       try {
-        const response = await axios.get("http://localhost:5000/Migraines");
+        const response = await axios.get("http://localhost:5000/migraines");
         this.items = response.data;
       } catch (err) {
         console.log(err);
@@ -69,7 +69,7 @@ export default {
     // Delete Migraine
     async deleteMigraine(id) {
       try {
-        await axios.delete(`http://localhost:5000/Migraines/${id}`);
+        await axios.delete(`http://localhost:5000/migraines/${id}`);
         this.getMigraines();
       } catch (err) {
         console.log(err);
