@@ -2,25 +2,25 @@
 import express from "express";
 
 // import function from controller
-import { showProducts, showProductById, createProduct, updateProduct, deleteProduct } from "../controllers/product.js";
+import { showMigraines, showMigraineById, createMigraine, updateMigraine, deleteMigraine } from "../controllers/migraine.js";
 
 // init express router
 const router = express.Router();
 
-// Get All Product
-router.get('/products', showProducts);
+// Get All Migraine
+router.get('/migraines', showMigraines);
 
-// Get Single Product
-router.get('/products/:id', showProductById);
+// Get Single Migraine
+router.get('/migraines/:id', showMigraineById);
 
-// Create New Product
-router.post('/products', createProduct);
+// Create New Migraine
+router.post('/migraines', createMigraine);
 
-// Update Product
-router.put('/products/:id', updateProduct);
+// Update Migraine
+router.put('/migraines/:id', updateMigraine);
 
-// Delete Product
-router.delete('/products/:id', deleteProduct);
+// Delete Migraine
+router.delete('/migraines/:id', deleteMigraine);
 
 // export default router
 export default router;

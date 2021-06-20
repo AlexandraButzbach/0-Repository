@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.migraine_id">
+        <tr v-for="item in items" :key="item.id">
           <td>{{ item.migraine_datum }}</td>
           <td>{{ item.migraine_start }}</td>
           <td>{{ item.migraine_ende }}</td>
@@ -23,13 +23,13 @@
           <td>{{ item.migraine_intensitaet }}</td>
           <td class="has-text-centered">
             <router-link
-              :to="{ name: 'Edit', params: { id: item.migraine_id } }"
+              :to="{ name: 'Edit', params: { id: item.id } }"
               class="button is-info is-small"
               >Edit</router-link
             >
             <a
               class="button is-danger is-small"
-              @click="deletemigraine(item.migraine_id)"
+              @click="deleteMigraine(item.id)"
               >Delete</a
             >
           </td>

@@ -5,7 +5,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
 //@WorkEigenes Passwort
-  password: '1001Elfi',
+  password: 'root',
 //@Work hier anpassen
   database: 'migraine_db'
 });

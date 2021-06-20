@@ -2,9 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
  
 import App from './App.vue'
-import Create from './components/AddProduct.vue'
-import Edit from './components/EditProduct.vue'
-import Index from './components/ProductList.vue'
+import Create from './components/AddMigraine.vue'
+import Edit from './components/EditMigraine.vue'
+import Index from './components/MigraineList.vue'
  
 Vue.use(VueRouter)
  

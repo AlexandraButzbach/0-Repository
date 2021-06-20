@@ -17,7 +17,7 @@ export const getMigraines = (result) => {
  
 // Get Single Migraine
 export const getMigraineById = (id, result) => {
-    db.query("SELECT * FROM migraine WHERE migraine_id = ?", [id], (err, results) => {             
+    db.query("SELECT * FROM migraine WHERE id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -41,8 +41,7 @@ export const insertMigraine = (data, result) => {
  
 // Update Migraine to Database
 export const updateMigraineById = (data, id, result) => {
-    
-    db.query("UPDATE migraine SET migraine_datum = ?, migraine_start = ?, 	migraine_ende = ?, 	migraine_dauer = ?, 	migraine_intensitaet = ? WHERE migraine_id = ?", 
+    db.query("UPDATE migraine SET migraine_datum = ?, migraine_start = ?, 	migraine_ende = ?, 	migraine_dauer = ?, 	migraine_intensitaet = ? WHERE id = ?", 
     [data.migraine_datum, migraine_start, migraine_ende, migraine_dauer, migraine_intensitaet, id], (err, results) => {             
         if(err) {
             console.log(err);
@@ -55,7 +54,7 @@ export const updateMigraineById = (data, id, result) => {
  
 // Delete Migraine to Database
 export const deleteMigraineById = (id, result) => {
-    db.query("DELETE FROM migraine WHERE migraine_id = ?", [id], (err, results) => {             
+    db.query("DELETE FROM migraine WHERE id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);

@@ -6,7 +6,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Datum"
+          placeholder="dd.mm.yy"
           v-model="migraineDatum"
         />
       </div>
@@ -18,7 +18,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Start"
+          placeholder="hh:min"
           v-model="migraineStart"
         />
       </div>
@@ -30,7 +30,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Ende"
+          placeholder="hh:min"
           v-model="migraineEnde"
         />
       </div>
@@ -42,7 +42,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Dauer"
+          placeholder="0h 0min"
           v-model="migraineDauer"
         />
       </div>
@@ -54,7 +54,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Intensität"
+          placeholder="1-10"
           v-model="migraineIntensitaet"
         />
       </div>

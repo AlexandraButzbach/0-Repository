@@ -6,7 +6,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Datum"
+          placeholder="dd.mm.yy"
           v-model="migraineDatum"
         />
       </div>
@@ -18,19 +18,19 @@
         <input
           class="input"
           type="text"
-          placeholder="Start"
+          placeholder="hh:min"
           v-model="migraineStart"
         />
       </div>
     </div>
 
-<div class="field">
+    <div class="field">
       <label class="label">Ende</label>
       <div class="control">
         <input
           class="input"
           type="text"
-          placeholder="Ende"
+          placeholder="hh:min"
           v-model="migraineEnde"
         />
       </div>
@@ -42,7 +42,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Dauer"
+          placeholder="0h 0min"
           v-model="migraineDauer"
         />
       </div>
@@ -54,12 +54,12 @@
         <input
           class="input"
           type="text"
-          placeholder="Intensität"
+          placeholder="1-10"
           v-model="migraineIntensitaet"
         />
       </div>
     </div>
-
+ 
     <div class="control">
       <button class="button is-success" @click="updateMigraine">UPDATE</button>
     </div>
@@ -107,8 +107,11 @@ export default {
         await axios.put(
           `http://localhost:5000/migraines/${this.$route.params.id}`,
           {
-            Migraine_name: this.MigraineName,
-            Migraine_price: this.MigrainePrice,
+          migraine_datum: this.migraineDatum,
+          migraine_start: this.migraineStart,
+          migraine_ende: this.migraineEnde,
+          migraine_dauer: this.migraineDauer,
+          migraine_intensitaet: this.migraineIntensitaet,
           }
         );
         this.migraineDatum = "";

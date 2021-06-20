@@ -1,4 +1,10 @@
-# frontend
+# Terminal 1
+cd frontend
+npm run serve
+
+# Terminal 2
+cd backend 
+node index
 
 ## Project setup
 ```

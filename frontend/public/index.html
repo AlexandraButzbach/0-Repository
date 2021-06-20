@@ -5,13 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" type="text/css" href=style.css>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <!--@Work Hier Header einfügen-->
+  <nav>
+    <ul>
+      <li style="float:left"><a href="#"><img class="logo" src="logo.png"></a></li>
+      <li><a href="#">Standorte</a></li>
+      <li><a href="#">Kontakt</a></li>
+      <li><a href="#">Angebot</a></li>
+      <li><a href="#">Über uns</a></li>
+    </ul>
+  </nav>
+  <img src="grass.jpg" />
+  <div class="container is-max-desktop">
+    <h1>Migräne-Anfälle dokumentieren</h1>
+  </div>
+  <div class="container is-max-desktop">
+    <p>Migräne ist eine der häufigsten Erkrankungen. Mit dieser Migräne-Website können Sie die Anfälle einfach erfassen. 
+      So können Sie und Ihr Arzt oder Ihre Ärztin anhand des Verlaufes besser erkennen, wann die Attacken auftreten, wie stark sie sind und wie lange sie dauern. 
+      Dadurch lassen sich Kopfschmerzen effektiver behandeln.
+    </p>
+  </div>
+
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <!--@Work Hier Footer einfügen-->
+    <footer>
+      Copyright 2021 Nationales Migräne Institut
+    </footer>
   </body>
 </html>

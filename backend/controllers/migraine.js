@@ -1,5 +1,5 @@
 // Import function from Migraine Model
-import { getMigraines, getMigraineById, insertMigraine, updateMigraineById, deleteMigraineById } from "../models/productModel.js";
+import { getMigraines, getMigraineById, insertMigraine, updateMigraineById, deleteMigraineById } from "../models/migraineModel.js";
  
 // Get All Migraines
 export const showMigraines = (req, res) => {
